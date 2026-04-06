@@ -609,7 +609,7 @@ export const logInLocalUser = async (email, encryptedPassword) => {
   if (user.email) {
       const result = await runQuery(query, args);
       //return result.records[0].get("localUser").properties;
-      return user;
+      return await ensureEncryptionProperties(user, {email});
   } else {
       console.log("User not returned from createUser, not able to set acceptedEula");
       console.log(result);

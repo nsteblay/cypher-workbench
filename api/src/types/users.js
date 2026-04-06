@@ -71,7 +71,7 @@ export default `
       acceptedEula(email: String): Boolean!
       getSystemMessages: [SystemMessage]
       decryptAsymmetricEncryptedItems(items: [EncryptedItemWithPublicKey]): [String]
-      graphQLTest: Boolean @cypher(statement: """RETURN true""")
+      graphQLTest: Boolean
   }
 
   type Mutation {

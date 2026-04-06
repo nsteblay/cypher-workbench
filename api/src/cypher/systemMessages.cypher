@@ -5,7 +5,7 @@ WITH {
     orgName: 'Neo4j'
 } as params
 MATCH (org:SecurityOrganization {name: params.orgName})
-MERGE (message:SystemMessage {key: apoc.create.uuid()})
+MERGE (message:SystemMessage {key: randomUUID()})
 SET message += {
 	message: params.message,
     dateAdded: timestamp(),
@@ -20,7 +20,7 @@ WITH {
     message: 'The system will be going down for maintenance on Friday, April 16 at 6PM Eastern time',
     orgName: 'Neo4j'
 } as params
-MERGE (message:SystemMessage {key: apoc.create.uuid()})
+MERGE (message:SystemMessage {key: randomUUID()})
 SET message += {
 	message: params.message,
     dateAdded: timestamp(),

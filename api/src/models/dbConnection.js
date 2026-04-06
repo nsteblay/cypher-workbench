@@ -57,7 +57,7 @@ export const createDBConnection = async (
         $encrypted as encrypted, $proxyThroughAppServer as proxyThroughAppServer, 
         $user as user, $password as password, $isPrivate as isPrivate,
         $maxNumberOfDatabases as maxNumberOfDatabases, $isCloud as isCloud,
-        apoc.create.uuid() as uuid
+        randomUUID() as uuid
     MATCH (u:User {email: email})
 
     CALL apoc.do.when(isCloud, 

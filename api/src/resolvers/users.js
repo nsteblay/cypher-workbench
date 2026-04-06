@@ -44,6 +44,9 @@ import {
       },
       decryptAsymmetricEncryptedItems: async (root, { items }, context, info) => {
         return await decryptAsymmetricEncryptedItems(items, context);
+      },
+      graphQLTest: async (root, args, context, info) => {
+        return true;
       }
     },
     Mutation: {
